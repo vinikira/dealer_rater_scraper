@@ -11,6 +11,7 @@ defmodule DealerRaterScraper.Adapters.Floki do
   @review_date_selector ".review-date > :first-child"
   @review_wrapper_selector ".review-wrapper > :first-child"
   @review_contents_selector ".review-content"
+  @employee_rating_selector ".employee-rating-badge-sm > :first-child > span"
   @review_detailed_ratings_selector ".review-ratings-all > :first-child"
   @customer_service_selector ":nth-child(1) > :last-child"
   @quality_of_work_selector ":nth-child(2) > :last-child"
@@ -98,7 +99,7 @@ defmodule DealerRaterScraper.Adapters.Floki do
 
     rating =
       review_employee
-      |> Floki.find(".employee-rating-badge-sm > :first-child > span")
+      |> Floki.find(@employee_rating_selector)
       |> Floki.text()
       |> String.to_float()
 
