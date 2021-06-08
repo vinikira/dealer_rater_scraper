@@ -22,7 +22,6 @@ defmodule DealerRaterScraper do
     |> Task.async_stream(&scrap_page(slug, &1))
     |> Stream.filter(&filter_errors/1)
     |> Stream.flat_map(fn {:ok, result} -> result end)
-    |> Enum.to_list()
     |> OverlyPositiveFilter.execute()
     |> Enum.each(&print_result/1)
 
