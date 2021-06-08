@@ -71,9 +71,9 @@ of review and makes the following checks:
    any rating with a score of 0.0 (or `false` in the case of
    `recommend_dealer` field);
 3. For each detailed rating in this condition, it sums
-   `0.166`<sup>[1](#myfootnote1)</sup> to a score that measures the
+   `0.166`¹ to a score that measures the
    probability of that review is false;
 4. Sorts by the highest score and takes three.
- 
-<a name="myfootnote1">1</a>:  
-Is the division of 5.0 by 6 (quantity of detailed ratings).
+
+## Footnotes
+¹: Is the division of 5.0 by 6 (quantity of detailed ratings).
